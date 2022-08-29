@@ -1,0 +1,14 @@
+.navbar {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  font-size: 40pxs;
+}
+
+.link_header {
+  color:#6D6F71;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
