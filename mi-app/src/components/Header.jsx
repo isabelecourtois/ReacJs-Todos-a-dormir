@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../images/logo2.jpg";
+import CartWidget from "./CartWidget";
 
 const Header = () => {
     return (
@@ -21,6 +22,10 @@ const Header = () => {
                     <li className="nav-item">
                         <a className="nav-link link_header" href="#">Contacto</a>
                     </li>
+                    <li className="nav-item">
+                        <a className="nav-link active" href="#"><CartWidget /></a>
+                    </li>
+                    
                 </ul>
             </div>
         </nav>
