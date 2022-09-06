@@ -10,3 +10,11 @@
   font-size: 20px;
 }
 
+.main-index {
+  text-align: center;
+}
+/* .abs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
