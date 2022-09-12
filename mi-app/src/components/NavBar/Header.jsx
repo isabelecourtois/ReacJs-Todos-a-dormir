@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/logo2.jpg";
+import logo from "../../images/logo2.jpg";
 import CartWidget from "./CartWidget";
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
                         <a className="nav-link active" aria-current="page" href="/"><img src={logo} width="90" alt="Todos a dormir" /></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link link_header" href="/">Consultas</a>
+                        <a className="nav-link link_header" href="/">Cursos</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link link_header" href="/">Quién soy yo</a>
