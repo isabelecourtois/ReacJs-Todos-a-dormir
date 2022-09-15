@@ -27,7 +27,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     return (
         <div className="container py-5">
-            <div class="abs-center">
+            <div className="abs-center">
                 <div className="row">
                     <div className="col-md-2">
                         <p className="text-center">Nombre del Producto</p>

@@ -5,7 +5,7 @@ import bebe4 from "../../images/bebe4.jpg";
 
 export const products = [
     {
-        id: 1,
+        id: '1',
         title: 'Hábitos Saludables (0-5 meses)',
         price: 400,
         stock: 50,
@@ -14,7 +14,7 @@ export const products = [
         img: bebe1,
     },
     {
-        id: 2,
+        id: '2',
         title: 'Regresión de los 4 meses (3-4 meses)',
         price: 400,
         stock: 50,
@@ -23,7 +23,7 @@ export const products = [
         img: bebe2,
     },
     {
-        id: 3,
+        id: '3',
         title: 'Durmiendo toda la Noche (5-18 meses)',
         price: 400,
         stock: 50,
@@ -32,7 +32,7 @@ export const products = [
         img: bebe3,
     },
     {
-        id: 3,
+        id: '4',
         title: 'Planes de Sueño Personalizados (5meses-6años)',
         price: 1000,
         stock: 10,
@@ -41,7 +41,7 @@ export const products = [
         img: bebe4,
     },
     {
-        id: 3,
+        id: '5',
         title: 'Bye Bye Madrugadores (5+ meses)',
         price: 400,
         stock: 50,

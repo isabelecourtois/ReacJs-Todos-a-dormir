@@ -1,6 +1,6 @@
 import React from "react";
 
-const Item = ({nombre, imagen, descripcion}) => {
+const Item = ({ nombre, imagen, descripcion }) => {
     return (
         <div className="card">
             <img src={imagen} className="card-img-top" alt={nombre} />

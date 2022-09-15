@@ -4,7 +4,11 @@ import { Component } from "react";
 class Titulo extends Component {
     render() {
         return (
-            <h1>{this.props.valor}</h1>
+            <div className="container">
+                <div className="abs-center">
+                    <h1>{this.props.valor}</h1>
+                </div>
+            </div>
         )
     }
 }

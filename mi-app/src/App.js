@@ -1,10 +1,14 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/NavBar/Header';
-import ItemListContainer from "./components/Container/ItemListContainer";
-import Titulo from './components/Titulo';
-import ItemDetailContainer from "./components/Container/ItemDetailContainer";
 import Index from './components/Index';
+import Titulo from './components/Titulo';
+import ItemListContainer from "./components/Container/ItemListContainer";
+import ItemDetailContainer from "./components/Container/ItemDetailContainer";
+import Quiensoy from './components/Quiensoy';
+import Blog from './components/Blog'
+import Contacto from './components/Contacto';
+import CartWidget from './components/NavBar/CartWidget';
 
 function App() {
 
@@ -13,18 +17,24 @@ function App() {
     <div className='container'>
       <BrowserRouter> 
         <Header />
+        {<Titulo valor="Todos a Dormir" />}
+        <hr />
         <Routes>
           <Route exact path="/" element={<Index />} />
           <Route exact path="/cursos" element={<ItemListContainer />} />
-          <Route exact path="/producto/:id" element={<ItemDetailContainer />} />
+          <Route exact path="/categoria/:tipo" element={<ItemListContainer />} />
+          <Route exact path="/cursos/:id" element={<ItemDetailContainer />} /> 
+          <Route exact path="/quiensoy" element={<Quiensoy />} />
+          <Route exact path="/blog" element={<Blog />} />
+          <Route exact path="/contacto" element={<Contacto />} />
+          <Route exact path="/carrito" element={<CartWidget />} />
         </Routes>
       </BrowserRouter>
       <hr></hr>
       <main className="main-index">
-        {<Titulo valor="Nuestros Cursos" />}
-        <hr />
-        <ItemListContainer />
-        <ItemDetailContainer />
+       
+     {/*    <ItemListContainer />
+       <ItemDetailContainer /> */}
       </main>
     </div>
   );

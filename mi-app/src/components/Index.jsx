@@ -1,8 +1,11 @@
 import React from 'react';
+import ItemListContainer from './Container/ItemListContainer';
 
 const Index = () => {
   return (
-    <div>Index</div>
+    <div>
+      <ItemListContainer />
+    </div>
   )
 }
 
