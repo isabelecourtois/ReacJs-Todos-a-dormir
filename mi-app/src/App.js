@@ -9,13 +9,14 @@ import Quiensoy from './components/Quiensoy';
 import Blog from './components/Blog'
 import Contacto from './components/Contacto';
 import CartWidget from './components/NavBar/CartWidget';
+import Provider from './components/Context/Context';
 
 function App() {
 
-
   return (
-    <div className='container'>
-      <BrowserRouter> 
+
+    <Provider>
+      <BrowserRouter>
         <Header />
         {<Titulo valor="Todos a Dormir" />}
         <hr />
@@ -23,7 +24,7 @@ function App() {
           <Route exact path="/" element={<Index />} />
           <Route exact path="/cursos" element={<ItemListContainer />} />
           <Route exact path="/categoria/:tipo" element={<ItemListContainer />} />
-          <Route exact path="/cursos/:id" element={<ItemDetailContainer />} /> 
+          <Route exact path="/cursos/:id" element={<ItemDetailContainer />} />
           <Route exact path="/quiensoy" element={<Quiensoy />} />
           <Route exact path="/blog" element={<Blog />} />
           <Route exact path="/contacto" element={<Contacto />} />
@@ -31,12 +32,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <hr></hr>
-      <main className="main-index">
-       
-     {/*    <ItemListContainer />
-       <ItemDetailContainer /> */}
-      </main>
-    </div>
+    </Provider>
   );
 }
 

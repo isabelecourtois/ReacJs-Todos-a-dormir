@@ -1,10 +1,10 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
     const [cantidad, setCantidad] = useState(initial);
     const [itemStock, setItemStock] = useState(stock);
-    const [itemAdd, setItemAdd] = useState(onAdd);
+   /*  const [itemAdd, setItemAdd] = useState(onAdd); */
 
     const restarProducto = (valor) => {
         if (valor > 0) {
@@ -20,29 +20,23 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     const agregarProductos = () => {
         if (cantidad <= itemStock) {
+            onAdd(cantidad); //Acá utilizo la función que estoy pasando vía Props, solamente le paso la cantidad de Items de Productos que voy a agregar
             setItemStock(itemStock - cantidad);
-            setItemAdd(itemAdd + cantidad);
+            setCantidad(itemStock - cantidad);
         }
     }
 
+    useEffect(() => { 
+        setItemStock(stock);
+    }, [stock]);
+
+
     return (
-        <div className="container py-5">
-            <div className="abs-center">
-                <div className="row">
-                    <div className="col-md-2">
-                        <p className="text-center">Nombre del Producto</p>
-                        <div className="input-group">
-                            <input type="button" className="btn btn-secondary" value="-" onClick={() => { restarProducto(cantidad - 1) }} />
-                            <input type="text" className="form-control" value={cantidad} onChange={() => { }} />
-                            <input type="button" className="btn btn-secondary" value="+" onClick={() => { sumarProducto(cantidad + 1) }} />
-                        </div>
-                        <div className="d-grid gap-2 py-3">
-                            <input type="button" className="btn btn-secondary" value="Agregar" onClick={() => { agregarProductos() }} />
-                        </div>
-                        <p>Productos Seleccionados: {itemAdd}</p>
-                    </div>
-                </div>
-            </div>
+        <div className="row">
+            <div className="col-md-6 offset-md-3">
+                <p><input type="button" className="btn fondo_naranja rounded-circle" value="-" onClick={() => {restarProducto(cantidad - 1)}} /> {cantidad} <input type="button" className="btn fondo_naranja rounded-circle" value="+" onClick={() => {sumarProducto(cantidad + 1)}} /></p>
+                <p><input type="button" className="btn fondo_naranja" value="Agregar" onClick={() => {agregarProductos()}} /></p>
+            </div>        
         </div>
     )
 };
