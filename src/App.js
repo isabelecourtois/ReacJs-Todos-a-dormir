@@ -8,8 +8,8 @@ import ItemDetailContainer from "./components/Container/ItemDetailContainer";
 import Quiensoy from './components/Quiensoy';
 import Blog from './components/Blog'
 import Contacto from './components/Contacto';
-import CartWidget from './components/NavBar/CartWidget';
 import Provider from './components/Context/Context';
+import Cart from './components/Item/Cart'; 
 
 function App() {
 
@@ -28,7 +28,8 @@ function App() {
           <Route exact path="/quiensoy" element={<Quiensoy />} />
           <Route exact path="/blog" element={<Blog />} />
           <Route exact path="/contacto" element={<Contacto />} />
-          <Route exact path="/carrito" element={<CartWidget />} />
+          <Route exact path="/carrito" element={<Cart />} />
+{/*           <Route exact path="/cart" element={<Cart />} /> */}
         </Routes>
       </BrowserRouter>
       <hr></hr>

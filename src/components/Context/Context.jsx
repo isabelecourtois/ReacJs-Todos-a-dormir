@@ -23,12 +23,21 @@ const Context = ({children}) => {
         return cart.some(item => item.id === id);
     }
 
-    const cartTotal = () => { //Me había olvidado de agregar al Provider del Contexto, la función cartTotal. Es por esa razón que la llamaba desde el otro lado y me decía que no lo reconocía.
+    const cartTotal = () => {
         return cart.reduce((total, item) => total+=item.cantidad, 0);
     }
 
+    const cartPrecioTotal = () => {
+        return cart.reduce((total, item) => total+=item.price, 0);
+    }
+
+    const borrarProducto = (id) => {
+        const filtroBorrar = cart.filter((prod) => prod.id !==id)
+        setCart(filtroBorrar);
+    };
+
     return (
-        <CartContext.Provider value={{cart, addItem, clear, cartTotal}}>
+        <CartContext.Provider value={{cart, addItem, clear, cartTotal, borrarProducto, cartPrecioTotal}}>
             {children}
         </CartContext.Provider>
     )
