@@ -1,14 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../Item/ItemList";
-import { products } from "../Productos/products";
+/* import { products } from "../Productos/products"; */
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+
 
 const ItemListContainer = () => {
+    const {id} = useParams();
     const [items, setItems] = useState([]);
-    const { tipo } = useParams();
-
 
     useEffect(() => {
+        const db = getFirestore();
+        const itemsCollection = collection(db, "productos");
+        const queryItems = id ? query(itemsCollection, where("categoria", "==", id)) : itemsCollection;
+        getDocs(queryItems).then((snapShot) => {
+            if (snapShot.size > 0) {
+                setItems(snapShot.docs.map(item => ({id:item.id, ...item.data()})));
+
+            }
+        });
+    }, [id]);
+
+
+/* const ItemListContainer = () => {
+    const [items, setItems] = useState([]);
+    const { tipo } = useParams();
+ 
+
+    useEffect(() => {
+
 
         let categoria = "";
 
@@ -20,7 +40,6 @@ const ItemListContainer = () => {
             categoria = "all";
         }
         console.log(categoria);
-        /* console.log(categoria); */
 
         const getProducts = new Promise((res, rej) => {
             setTimeout(() => {
@@ -37,12 +56,10 @@ const ItemListContainer = () => {
 
                 const array_productos = res.filter(product => product.category === categoria);
                 setItems(array_productos);
-                /* console.log(categoria); */
             }
         });
 
-        /* console.log(categoria); */
-    }, [tipo]);
+    }, [tipo]); */
 
     return (
         <div className="container">

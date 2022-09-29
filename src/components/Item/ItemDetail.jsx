@@ -17,7 +17,7 @@ const ItemDetail = ({ item }) => {
         <div className="container">
             <div className="row">
                 <div className="col-md-4 offset-md-2">
-                    <img src={item.img} alt={item.title} className="img-fluid" />
+                    <img src={"../images/" + item.img +".jpg" } className="img-fluid" alt={item.title} />
                 </div>
                 <div className="col-md-4">
                     <h1>{item.title}</h1>

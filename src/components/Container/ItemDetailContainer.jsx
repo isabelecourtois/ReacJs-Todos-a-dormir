@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from '../Item/ItemDetail';
-import { products } from '../Productos/products';
+/* import { products } from '../Productos/products'; */
 import { useParams } from "react-router-dom";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 
 const ItemDetailContainer = () => {
@@ -9,7 +10,17 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        const getProduct = (id) =>
+        const db = getFirestore();
+        const response = doc(db, "productos", id);
+        getDoc(response).then((snapShot) => {
+            if (snapShot.exists()) {
+                setItem({id:snapShot.id, ...snapShot.data()});
+            }            
+        });
+        console.log(item);
+    }, [id]);
+    
+/*         const getProduct = (id) =>
             new Promise((res, rej) => {
                 const product = products.find((prod => prod.id === id));
                 setTimeout(() => {
@@ -21,7 +32,7 @@ const ItemDetailContainer = () => {
             setItem(info)
         })
     }, [id]);
-
+ */
     return (
         <div style={{ minHeight: '70vh' }}>
             <ItemDetail item={item} />
