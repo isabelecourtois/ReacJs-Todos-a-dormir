@@ -10,6 +10,7 @@ import Blog from './components/Blog'
 import Contacto from './components/Contacto';
 import Provider from './components/Context/Context';
 import Cart from './components/Item/Cart'; 
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
 
@@ -23,13 +24,13 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Index />} />
           <Route exact path="/cursos" element={<ItemListContainer />} />
-          <Route exact path="/categoria/:tipo" element={<ItemListContainer />} />
+          <Route exact path="/categoria/:categoryName" element={<ItemListContainer />} />
           <Route exact path="/cursos/:id" element={<ItemDetailContainer />} />
           <Route exact path="/quiensoy" element={<Quiensoy />} />
           <Route exact path="/blog" element={<Blog />} />
           <Route exact path="/contacto" element={<Contacto />} />
           <Route exact path="/carrito" element={<Cart />} />
-{/*           <Route exact path="/cart" element={<Cart />} /> */}
+          <Route exact path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
       <hr></hr>

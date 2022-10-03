@@ -30,6 +30,7 @@ const Context = ({children}) => {
     const cartPrecioTotal = () => {
         return cart.reduce((total, item) => total+=item.price, 0);
     }
+    console.log(cartPrecioTotal);
 
     const borrarProducto = (id) => {
         const filtroBorrar = cart.filter((prod) => prod.id !==id)

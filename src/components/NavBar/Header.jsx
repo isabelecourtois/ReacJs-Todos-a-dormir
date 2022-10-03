@@ -1,33 +1,57 @@
-import React from "react";
+import React, { useEffect, useState }  from "react";
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import logo from "../../images/logo2.jpg";
 import CartWidget from "./CartWidget";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 
 const Header = () => {
+    const db = getFirestore();
+    const [cat, setCat] = useState([]);
+
+    useEffect(() => {
+        const categoryColecction = collection(db, 'categories');
+
+        getDocs(categoryColecction).then((resp) => {
+            const categorias = resp.docs.map((cat) => {
+                return {
+                    id: cat.id,
+                    ...cat.data(),
+                };
+            });
+            setCat(categorias);
+        });
+    }, []);
+
     return (
         <nav className="navbar navbar-default" role="navigation">
             <div className="container">
                 <ul className="nav d-flex align-items-center">
                     <li className="nav-item">
-                        <Link className="nav-link active" aria-current="page" to={"/"}><img src={logo} width="90" alt="Todos a dormir" /></Link>
+                        <NavLink className="nav-link active" aria-current="page" to={"/"}><img src={logo} width="90" alt="Todos a dormir" /></NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link link_header" to={"/categoria/curso"}>Cursos</Link>
+                    {cat.map((categoria) => (
+                    <NavLink
+                        key={categoria.id}
+                        style={{ margin: '0px 8px', textDecoration: 'none' }} 
+                        to={`/categoria/${categoria.path}`}
+                    >
+                        {categoria.name}
+                    </NavLink>
+                ))}
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link link_header" to={"/categoria/consulta"}>Consultas</Link>
+                        <NavLink className="nav-link link_header" to={'/quiensoy'}>Quién soy yo</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link link_header" to={'/quiensoy'}>Quién soy yo</Link>
+                        <NavLink className="nav-link link_header" to={'/blog'}>Blog</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link link_header" to={'/blog'}>Blog</Link>
+                        <NavLink className="nav-link link_header" to={'/contacto'}>Contacto</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link link_header" to={'/contacto'}>Contacto</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link active" to={'/carrito'}><CartWidget /></Link>
+                        <NavLink className="nav-link active" to={'/carrito'}><CartWidget /></NavLink>
                     </li>
 
                 </ul>
