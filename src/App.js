@@ -1,8 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/NavBar/Header';
-import Index from './components/Index';
-import Titulo from './components/Titulo';
+import Index from './components/Index/Index';
 import ItemListContainer from "./components/Container/ItemListContainer";
 import ItemDetailContainer from "./components/Container/ItemDetailContainer";
 import Quiensoy from './components/Quiensoy';
@@ -19,8 +18,6 @@ function App() {
     <Provider>
       <BrowserRouter>
         <Header />
-        {<Titulo valor="Todos a Dormir" />}
-        <hr />
         <Routes>
           <Route exact path="/" element={<Index />} />
           <Route exact path="/cursos" element={<ItemListContainer />} />
@@ -33,7 +30,6 @@ function App() {
           <Route exact path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
-      <hr></hr>
     </Provider>
   );
 }

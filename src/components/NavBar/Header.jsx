@@ -32,9 +32,9 @@ const Header = () => {
                     </li>
                     <li className="nav-item">
                     {cat.map((categoria) => (
-                    <NavLink
+                    <NavLink className="nav-link link_header"
                         key={categoria.id}
-                        style={{ margin: '0px 8px', textDecoration: 'none' }} 
+                        style={{ margin: '0px 8px', textDecoration: 'none', display: 'inline' }} 
                         to={`/categoria/${categoria.path}`}
                     >
                         {categoria.name}
@@ -42,7 +42,7 @@ const Header = () => {
                 ))}
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link link_header" to={'/quiensoy'}>Quién soy yo</NavLink>
+                        <NavLink className="nav-link link_header" to={'/quiensoy'}>Quién soy</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link link_header" to={'/blog'}>Blog</NavLink>

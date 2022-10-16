@@ -1,20 +1,25 @@
+/* Inicia estilos del NavBar */
 .navbar {
   left: 50%;
   transform: translatex(-50%);
-  font-size: 40pxs;
+  font-size: 30pxs;
 }
 
 .link_header {
-  color:#6D6F71;
-  font-weight: bold;
+  color:#80CECC;
+  font-weight: bold; 
   font-size: 20px;
 }
 
 .main-index {
   text-align: center;
 }
-/* .abs-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+/* Finaliza estilos del NavBar */
+
+/* Inicia estilos del Hero */
+
+.col-lg-1{
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+}
