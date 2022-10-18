@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 
 const Testimonial = () => {
   return (
@@ -99,18 +100,18 @@ const Testimonial = () => {
                      </ol>
                      --> */}
 					<div className="w-100 text-center mt-3">
-						<a className="carousel-control-prev position-relative d-inline me-4" href="#carouselTestimonial" data-bs-slide="prev">
+						<Link className="carousel-control-prev position-relative d-inline me-4" href="#carouselTestimonial" data-bs-slide="prev">
 							<svg width="1em" height="1em" viewBox="0 0 16 16" className="text-dark" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
 							</svg>
 							<span className="visually-hidden">Previous</span>
-						</a>
-						<a className="carousel-control-next position-relative d-inline" href="#carouselTestimonial" data-bs-slide="next">
+						</Link>
+						<Link className="carousel-control-next position-relative d-inline" href="#carouselTestimonial" data-bs-slide="next">
 							<svg width="1em" height="1em" viewBox="0 0 16 16" className="text-dark" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
 							</svg>
 							<span className="visually-hidden">Next</span>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

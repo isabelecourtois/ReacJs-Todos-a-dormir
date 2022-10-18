@@ -9,6 +9,7 @@ const ItemList = ({ items }) => {
 <h1 className="rfs-25" style={{ color: '#80CECC' }}>Nuestras soluciones</h1>
     <p class="font-italic text-muted mb-0">Las hemos creado en Todos a Dormir para el descanso tuyo y de tu bebé.</p>
   </header>
+  
         <div className="row">
             {items.map(item => (
                 <div key={item.id} className="col-xl-3 col-md-6 mb-4">

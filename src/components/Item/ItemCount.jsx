@@ -33,9 +33,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     return (
         <div className="row">
-            <div className="col-md-6 offset-md-3">
-                <p><input type="button" className="btn fondo_naranja rounded-circle" value="-" onClick={() => {restarProducto(cantidad - 1)}} /> {cantidad} <input type="button" className="btn fondo_naranja rounded-circle" value="+" onClick={() => {sumarProducto(cantidad + 1)}} /></p>
-                <p><input type="button" className="btn fondo_naranja" value="Agregar" onClick={() => {agregarProductos()}} /></p>
+            <div className="col-md-6 offset-md-3"style={{fontWeight:'bold',color:'grey'}}>
+                <p><input type="button" className="btn rounded-circle" style={{fontWeight:'bold', color: 'white', backgroundColor:'#80CECC'}} value="-" onClick={() => {restarProducto(cantidad - 1)}} /> {cantidad} <input type="button" className="btn rounded-circle" style={{fontWeight:'bold', color: 'white', backgroundColor:'#80CECC'}} value="+" onClick={() => {sumarProducto(cantidad + 1)}} /></p>
+                <p><input type="button" className="btn btn-lg mx-1" style={{fontWeight:'bold', color: 'white', backgroundColor:'#80CECC'}} value="Agregar" onClick={() => {agregarProductos()}} /></p>
             </div>        
         </div>
     )

@@ -3,6 +3,7 @@ import Hero from './Hero';
 import IndexContent from './IndexContent';
 import ItemListContainer from '../Container/ItemListContainer';
 import Testimonial from './Testimonial';
+import Footer from './Footer';
 
 const Index = () => {
 
@@ -12,6 +13,7 @@ const Index = () => {
 			<IndexContent/>
 			<ItemListContainer /> 
 			<Testimonial/>
+			<Footer/>
 		</div>
 	)
 }
