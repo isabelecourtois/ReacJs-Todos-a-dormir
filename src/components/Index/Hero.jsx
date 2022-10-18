@@ -10,9 +10,9 @@ const Hero = () => {
 				<div className="row py-5">
 					<div className="col-lg-1 d-none d-lg-flex align-items-center">
 						<div className="lc-block d-flex" style={{ writingMode: 'vertical-lr', transform: "rotate(180deg)" }}>
-							<Link className="btn btn-link my-2 text-decoration-none" style={{color:'#80CECC'}} href="/" role="button">Facebook</Link>
-							<Link className="btn btn-link my-4 text-decoration-none" style={{color:'#80CECC'}} href="/" role="button">Twitter</Link>
-							<Link className="btn btn-link my-2 text-decoration-none" style={{color:'#80CECC'}} href="/" role="button">Youtube</Link>
+							<Link className="btn btn-link my-2 text-decoration-none" style={{color:'#80CECC'}} to={"/"} role="button">Facebook</Link>
+							<Link className="btn btn-link my-4 text-decoration-none" style={{color:'#80CECC'}} to={"/"} role="button">Twitter</Link>
+							<Link className="btn btn-link my-2 text-decoration-none" style={{color:'#80CECC'}} to={"/"} role="button">Youtube</Link>
 						</div>
 					</div>
 					<div className="col-sm-6 d-flex d-lg-none flex-sm-column align-items-center justify-content-around mb-4 mb-sm-0">
@@ -46,8 +46,8 @@ const Hero = () => {
 							</div>
 						</div>
 						<div className="lc-block ">
-							<Link className="btn btn-lg mx-1" style={{fontWeight:'bold', color: 'white', backgroundColor:'#80CECC'}} to={"/"} role="button">Cursos</Link>
-							<Link className="btn btn-lg mx-1" style={{fontWeight:'bold', color: 'grey', backgroundColor:'#E2E2E2'}} to={"/"} role="button">Consultas</Link>
+							<Link className="btn btn-lg mx-1" style={{fontWeight:'bold', color: 'white', backgroundColor:'#80CECC'}} to={"/categoria/curso"} role="button">Cursos</Link>
+							<Link className="btn btn-lg mx-1" style={{fontWeight:'bold', color: 'grey', backgroundColor:'#E2E2E2'}} to={"/categoria/consulta"} role="button">Consultas</Link>
 						</div>
 					</div>
 				</div>

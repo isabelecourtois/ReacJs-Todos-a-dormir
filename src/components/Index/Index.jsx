@@ -9,10 +9,10 @@ const Index = () => {
 
 	return (
 		<div>
-			<Hero/>
+			 <Hero/> 
 			<IndexContent/>
 			<ItemListContainer /> 
-			<Testimonial/>
+			<Testimonial/> 
 			<Footer/>
 		</div>
 	)

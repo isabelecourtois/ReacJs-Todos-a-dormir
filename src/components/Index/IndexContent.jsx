@@ -6,7 +6,7 @@ const IndexContent = () => {
 
 <div className="container-fluid p-0 overflow-hidden my-5">
 	<div className="row g-0 mx-5">
-		<div lcHelper="background" className="col-lg-4 order-lg-2 " style={{ minHeight: '45vh', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: 'url(../../images/tad2.jpeg)'}}>
+		<div className="col-lg-4 order-lg-2 " style={{ minHeight: '45vh', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: 'url(../../images/tad2.jpeg)'}}>
 
 		</div>
 		<div className="col-lg-8 order-lg-1 my-auto px-5 py-5">

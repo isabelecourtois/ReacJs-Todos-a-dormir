@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const ItemList = ({ items }) => {
     return (
-<div class="container py-5">
-<header class="text-center mb-5">
+<div className="container py-5">
+<header className="text-center mb-5">
 <h1 className="rfs-25" style={{ color: '#80CECC' }}>Nuestras soluciones</h1>
-    <p class="font-italic text-muted mb-0">Las hemos creado en Todos a Dormir para el descanso tuyo y de tu bebé.</p>
+    <p className="font-italic text-muted mb-0">Las hemos creado en Todos a Dormir para el descanso tuyo y de tu bebé.</p>
   </header>
   
         <div className="row">

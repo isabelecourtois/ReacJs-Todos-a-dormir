@@ -38,7 +38,7 @@ const ItemDetail = ({ item }) => {
                         </div>
                     </div>
 
-                    <div class="rounded position-absolute d-none d-lg-block" style={{top:'50%', right:'0', width:'45%', height:'auto', transform:'translateY(-50%)', zIndex:'2'}}>
+                    <div className="rounded position-absolute d-none d-lg-block" style={{top:'50%', right:'0', width:'45%', height:'auto', transform:'translateY(-50%)', zIndex:'2'}}>
                         <img className="img-fluid rounded-3 shadow" src={"../images/" + item.img}   width="300" height="auto" alt={item.title} loading="lazy"/>
                     </div>
 
