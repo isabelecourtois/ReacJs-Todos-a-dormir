@@ -1,12 +1,12 @@
 import React, { useEffect, useState }  from "react";
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+/* import { getFirestore, collection, getDocs } from 'firebase/firestore'; */
 import logo from "../../images/logo2.jpg";
 import CartWidget from "./CartWidget";
 import { NavLink } from "react-router-dom";
 
 
 const Header = () => {
-    const db = getFirestore();
+    /* const db = getFirestore();
     const [cat, setCat] = useState([]);
 
     useEffect(() => {
@@ -21,16 +21,16 @@ const Header = () => {
             });
             setCat(categorias);
         });
-    }, []);
+    }, []); */
 
     return (
         <nav className="navbar navbar-default" role="navigation">
             <div className="container">
                 <ul className="nav d-flex align-items-center">
-                    <li className="nav-item">
+                   <li className="nav-item">
                         <NavLink className="nav-link active" aria-current="page" to={"/"}><img src={logo} width="90" alt="Todos a dormir" /></NavLink>
                     </li>
-                    <li className="nav-item">
+                    {/*  <li className="nav-item">
                     {cat.map((categoria) => (
                     <NavLink className="nav-link link_header"
                         key={categoria.id}
@@ -40,9 +40,12 @@ const Header = () => {
                         {categoria.name}
                     </NavLink>
                 ))}
+                    </li> */}
+                    <li className="nav-item">
+                        <NavLink className="nav-link link_header" to={"/categoria/curso"}>Cursos</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link link_header" to={'/quiensoy'}>Quién soy</NavLink>
+                        <NavLink className="nav-link link_header" to={'/categoria/consulta'}>Consulta</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link link_header" to={'/blog'}>Blog</NavLink>
