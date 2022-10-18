@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from "react";
+/* import React, { useEffect, useState }  from "react"; */
 /* import { getFirestore, collection, getDocs } from 'firebase/firestore'; */
 import logo from "../../images/logo2.jpg";
 import CartWidget from "./CartWidget";
